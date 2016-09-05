@@ -12,6 +12,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by vlados on 9/5/2016.
  */
@@ -52,6 +54,15 @@ public class CrudRepositoryTest {
         speaker.getTalks().forEach(System.out::println);
         System.out.println("----------------------------------");
     }
+
+    @Test
+    public void testFindByNameLike() {
+        System.out.println("----------------------------------");
+        List<Speaker> speakers = speakerRepository.findPleaseByNameLike("%a%");
+        speakers.forEach(System.out::println);
+        System.out.println("----------------------------------");
+    }
+
 
     @After
     public void clean() {
