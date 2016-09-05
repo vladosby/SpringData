@@ -63,6 +63,14 @@ public class CrudRepositoryTest {
         System.out.println("----------------------------------");
     }
 
+    @Test
+    public void testFindByNameEndingWith() {
+        System.out.println("----------------------------------");
+        List<Speaker> speakers = speakerRepository.findByNameEndingWith("an");
+        speakers.forEach(System.out::println);
+        System.out.println("----------------------------------");
+    }
+
 
     @After
     public void clean() {

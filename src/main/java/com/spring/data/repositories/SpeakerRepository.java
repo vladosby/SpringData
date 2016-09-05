@@ -12,4 +12,5 @@ import java.util.List;
 public interface SpeakerRepository extends CrudRepository<Speaker, Long> {
     Speaker findByName(String name);
     List<Speaker> findPleaseByNameLike(String nameLike);
+    List<Speaker> findByNameEndingWith(String suffix);
 }
