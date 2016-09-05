@@ -24,7 +24,7 @@ import java.util.Date;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = JavaConfig.class)
 @Transactional
-public class AppTest {
+public class CrudRepositoryTest {
     @Autowired
     private SpeakerRepository speakerRepository;
 
