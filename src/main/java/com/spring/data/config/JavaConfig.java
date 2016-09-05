@@ -17,7 +17,6 @@ import java.util.Properties;
  */
 
 @Configuration
-//@ComponentScan
 @EnableJpaRepositories(basePackages={"com.spring.data.repositories"})
 @EnableTransactionManagement
 public class JavaConfig {
@@ -39,8 +38,6 @@ public class JavaConfig {
         emFactory.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         Properties jpaProperties = new Properties();
         jpaProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
-//        jpaProperties.setProperty("spring.jpa.database-platform", "org.hibernate.dialect.PostgreSQL95Dialect");
-//        jpaProperties.setProperty("spring.jpa.generate-ddl", "true");
         jpaProperties.setProperty("hibernate.hbm2ddl.auto", "update");
         emFactory.setJpaProperties(jpaProperties);
         emFactory.setPackagesToScan("com.spring.data.entities");
