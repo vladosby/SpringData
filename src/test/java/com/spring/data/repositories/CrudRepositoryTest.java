@@ -12,9 +12,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Arrays;
-import java.util.Date;
-
 /**
  * Created by vlados on 9/5/2016.
  */
@@ -47,11 +44,14 @@ public class CrudRepositoryTest {
         System.out.println("----------------------------------");
     }
 
-//    @Test
-//    public void testFindByName() {
-//        System.out.println("----------------------------------");
-//        System.out.println("----------------------------------");
-//    }
+    @Test
+    public void testFindByName() {
+        System.out.println("----------------------------------");
+        Speaker speaker = speakerRepository.findByName("Semenov Semen");
+        System.out.println(speaker.getName());
+        speaker.getTalks().forEach(System.out::println);
+        System.out.println("----------------------------------");
+    }
 
     @After
     public void clean() {
